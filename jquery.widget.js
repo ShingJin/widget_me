@@ -374,7 +374,7 @@ var fm = (function () {
 		}
 
 		if (fm_options.iframe_url === undefined) {
-			form_html = "<p>You've helped us raise X amount for X charity</p>";
+			form_html = "You've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charity";
 		} else {
 			iframe_html = '<iframe name="widget_me_frame" id="widget_me_frame" frameborder="0" src="' + fm_options.iframe_url + '"></iframe>';
 		}
@@ -503,7 +503,7 @@ var fm = (function () {
 			show_email : false,
 			show_radio_button_list : false,
 			close_on_click_outisde: true,
-			name_label : "Name",
+			name_label : "You've raised X for X charity",
 			email_label : "Email",
 			message_label : "Message",
 			radio_button_list_labels : ["1", "2", "3", "4", "5"],
