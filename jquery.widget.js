@@ -386,6 +386,9 @@ var fm = (function () {
 							+  form_html
 							+  iframe_html
 						+ '</div>');
+        
+          $("#widget_content").css({"background-color":fm_options.widget_color});
+          $("#widget_content").css({"color":fm_options.widget_text_color});
 
 		if (fm_options.jQueryUI === true) {
 			$('#widget_submit').button({
