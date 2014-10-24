@@ -94,11 +94,7 @@
 				Default value:		"Send"
 				Description:		Label for submit input
 
-* title_label
-				Required:			false
-				Type:				String
-				Default value:		"Widget"
-				Description:		Label for title text
+
 
 * trigger_label
 				Required:			false
@@ -374,7 +370,7 @@ var fm = (function () {
 		}
 
 		if (fm_options.iframe_url === undefined) {
-			form_html = "You've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charityYou've raised X amount for X charity";
+			form_html = widget_text;
 		} else {
 			iframe_html = '<iframe name="widget_me_frame" id="widget_me_frame" frameborder="0" src="' + fm_options.iframe_url + '"></iframe>';
 		}
@@ -385,7 +381,7 @@ var fm = (function () {
 
 		$('body').append('<div id="widget_content" class="widget_content_closed ' + fm_options.position + email_widget_content_class + radio_button_list_class + jQueryUIClasses2 + fm_class + jquery_class + bootstrap_class + bootstrap_hero_unit + '">'
 							+ '<div class="widget_title ' + jQueryUIClasses1 + jQueryUIClasses3 + '">'
-							+	'<span class="' + jQueryUIClasses4 + '">' + fm_options.title_label + '</span>'
+							+	'<span class="' + jQueryUIClasses4 + '">' + fm_options.widget_title + '</span>'
 							+ '</div>'
 							+  form_html
 							+  iframe_html
@@ -503,6 +499,10 @@ var fm = (function () {
 			show_email : false,
 			show_radio_button_list : false,
 			close_on_click_outisde: true,
+			widget_title: "We Donate To Charity!",
+			widget_text: "With your help, we've raised [amount_all_time] for charity!",
+			widget_color: "grey",
+			widget_text_color: "black",
 			name_label : "You've raised X for X charity",
 			email_label : "Email",
 			message_label : "Message",
@@ -517,7 +517,6 @@ var fm = (function () {
 			radio_button_list_required : false,
 			show_asterisk_for_required : false,
 			submit_label : "Send",
-			title_label : "Widget",
 			trigger_label : "Widget",
 			custom_params : {},
 			iframe_url : undefined
