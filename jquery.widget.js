@@ -370,7 +370,7 @@ var fm = (function () {
 		}
 
 		if (fm_options.iframe_url === undefined) {
-			form_html = widget_text;
+			form_html = fm_options.widget_text;
 		} else {
 			iframe_html = '<iframe name="widget_me_frame" id="widget_me_frame" frameborder="0" src="' + fm_options.iframe_url + '"></iframe>';
 		}
