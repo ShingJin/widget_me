@@ -47,7 +47,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 }
 
 #widget_trigger.left-top, #widget_trigger.left-bottom , #widget_trigger.right-top, #widget_trigger.right-bottom { 
-	width: 40px;
+	width: 30px;
 	height: 100px;
 }
 
@@ -57,9 +57,10 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 }
 
 #widget_content {
-	width: 380px;
-	height: 300px;
+	width: 360px;
+	height: 280px;
 	z-index: 2001;
+	padding:10px;
 }
 
 #widget_content.email_present {

@@ -370,7 +370,7 @@ var fm = (function () {
 		}
 
 		if (fm_options.iframe_url === undefined) {
-			form_html = fm_options.widget_text;
+			form_html = '<div id="widget_text">'+fm_options.widget_text+"</div>";
 		} else {
 			iframe_html = '<iframe name="widget_me_frame" id="widget_me_frame" frameborder="0" src="' + fm_options.iframe_url + '"></iframe>';
 		}
@@ -467,6 +467,17 @@ var fm = (function () {
 		});
 	}
 
+	function getTotalRaisedAmount() {
+		var domain = window.location.origin.replace(/http:\/\//i,"");
+		var url = "http://localhost:3000/total_amount?domain=" + domain
+		$.getJSON(url, function(data) {
+			 var text = $("#widget_text").text();
+			 text = text.replace(/\[amount\_all\_time\]/i,data)
+			 $("#widget_text").text(text)
+		});
+	}
+
+
 	function detectTransitionSupport() {
 		var be = document.body || document.documentElement,
 			style = be.style,
@@ -520,7 +531,7 @@ var fm = (function () {
 			radio_button_list_required : false,
 			show_asterisk_for_required : false,
 			submit_label : "Send",
-			trigger_label : "Widget",
+			trigger_label : "We Donate!",
 			custom_params : {},
 			iframe_url : undefined
 		};
@@ -530,6 +541,8 @@ var fm = (function () {
 		appendWidgetToBody();
 
 		detectTransitionSupport();
+
+		getTotalRaisedAmount();
 	}
 
     return {
