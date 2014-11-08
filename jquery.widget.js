@@ -468,8 +468,10 @@ var fm = (function () {
 	}
 
 	function getTotalRaisedAmount() {
+
 		var domain = window.location.origin.replace(/http:\/\//i,"");
-		var url = "http://localhost:3000/total_amount?domain=" + domain
+		
+		var url = "http://charitizer.herokuapp.com/total_amount?domain=" + domain
 		$.getJSON(url, function(data) {
 			 var text = $("#widget_text").text();
 			 text = text.replace(/\[amount\_all\_time\]/i,data)
