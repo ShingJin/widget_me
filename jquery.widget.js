@@ -470,7 +470,11 @@ var fm = (function () {
 	function getTotalRaisedAmount() {
 
 		var domain = window.location.origin.replace(/http:\/\//i,"");
-		
+
+		if ($("#shop_url")!=null){
+			domain = $("#shop_url").text();
+		}
+
 		var url = "http://charitizer.herokuapp.com/total_amount?domain=" + domain
 		$.getJSON(url, function(data) {
 			 var text = $("#widget_text").text();
