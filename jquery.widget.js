@@ -475,11 +475,13 @@ var fm = (function () {
 			domain = $("#shop_url").text();
 		}
 
-		var url = "http://charitizer.herokuapp.com/total_amount?domain=" + domain
-		$.getJSON(url, function(data) {
-			 var text = $("#widget_text").text();
-			 text = text.replace(/\[amount\_all\_time\]/i,data)
-			 $("#widget_text").text(text)
+		domain = domain.replace(/\.myshopify\.com/i,"");
+		var url = "http://charitizer.herokuapp.com/login";
+		var amount = "";
+		$.get(url, function(data) {
+          amount = "With your help, we've raised " + data.match(/>.</)[0].replace(">","").replace("<","") +" for charity!";
+          $("#widget_text").text(String(amount));
+          alert(amount);
 		});
 	}
 
