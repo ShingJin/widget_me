@@ -481,7 +481,6 @@ var fm = (function () {
 		$.get(url, function(data) {
           amount = "With your help, we've raised " + data.match(/>.</)[0].replace(">","").replace("<","") +" for charity!";
           $("#widget_text").text(String(amount));
-          alert(amount);
 		});
 	}
 
