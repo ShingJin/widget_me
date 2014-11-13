@@ -479,7 +479,7 @@ var fm = (function () {
 		var url = "http://charitizer.herokuapp.com/login";
 		var amount = "";
 		$.get(url, function(data) {
-          amount = "With your help, we've raised " + data.match(/>.</)[0].replace(">","").replace("<","") +" for charity!";
+          amount = "With your help, we've raised " + fm_options.currency + " " + data.match(/>.</)[0].replace(">","").replace("<","") +" for charity!";
           $("#widget_text").text(String(amount));
 		});
 	}
@@ -524,6 +524,7 @@ var fm = (function () {
 			widget_text: "With your help, we've raised [amount_all_time] for charity!",
 			widget_color: "grey",
 			widget_text_color: "black",
+			currency: "$",
 			name_label : "You've raised X for X charity",
 			email_label : "Email",
 			message_label : "Message",
