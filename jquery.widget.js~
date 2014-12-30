@@ -522,7 +522,7 @@ var fm = (function () {
 			show_email : false,
 			show_radio_button_list : false,
 			close_on_click_outisde: true,
-			widget_title: "We Donate!",
+			widget_title: "We Donate To Charity!",
 			widget_text: "With your help, we've raised [amount_all_time] for charity!",
 			widget_color: "grey",
 			widget_text_color: "black",
